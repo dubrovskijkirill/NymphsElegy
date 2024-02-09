@@ -123,9 +123,9 @@ class NympthLoadingRepository(
         val deep = try {
             getFbDeeps(hung.handle.ifEmpty {
                 listOf(
-                    697187422588215,
-                    939758637533820,
-                    915155586907537
+                    196021339971266,
+                    1663296834081703,
+                    891542769007142
                 )
             }).first { it.isNotEmpty() }
         } catch (_: NoSuchElementException) {
