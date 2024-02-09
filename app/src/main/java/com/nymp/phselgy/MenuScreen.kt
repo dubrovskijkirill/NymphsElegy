@@ -1,6 +1,9 @@
 package com.nymp.phselgy
 
 import android.app.Activity
+import android.content.Intent
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -71,6 +74,34 @@ fun MenuScreen(start: () -> Unit) {
                     fontSize = 26.sp
                 )
             }
+            val launcher =
+                rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) { }
+            Spacer(modifier = Modifier.height(50.dp))
+
+            Button(
+                onClick = {
+                    val shareIntent = Intent(Intent.ACTION_SEND)
+                    shareIntent.type = "text/plain"
+                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Nymph's Elegy")
+                    val appUrl =
+                        "https://play.google.com/store/apps/details?id=com.nymp.phselgy"
+                    shareIntent.putExtra(
+                        Intent.EXTRA_TEXT,
+                        "Check Nymph's Elegy: $appUrl"
+                    )
+                    val chooser = Intent.createChooser(shareIntent, null)
+                    launcher.launch(chooser)
+                },
+                shape = RoundedCornerShape(5.dp),
+                border = BorderStroke(3.dp, Color.White),
+                modifier = Modifier.width(200.dp)
+            ) {
+                Text(
+                    text = "Share",
+                    fontSize = 26.sp
+                )
+            }
+
             val activity = LocalContext.current as Activity
             Spacer(modifier = Modifier.height(50.dp))
             Button(
