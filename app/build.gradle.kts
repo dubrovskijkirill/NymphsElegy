@@ -20,7 +20,7 @@ android {
 
     defaultConfig {
         applicationId = "com.nymp.phselgy"
-        minSdk = 28
+        minSdk = 24
         targetSdk = 34
         versionCode = 3
         versionName = "3.0"
