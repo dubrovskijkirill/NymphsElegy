@@ -1,4 +1,4 @@
-package com.eme.rald.heart.loader
+package com.nymp.phselgy.feature_load
 
 import android.provider.Settings
 import androidx.compose.animation.core.InfiniteRepeatableSpec
@@ -22,7 +22,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.nymp.phselgy.R
-import com.nymp.phselgy.feature_load.NympthLoadingViewModel
 
 
 @Composable
